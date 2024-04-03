@@ -6,11 +6,11 @@ interface TodoListProps {
   onToggleTodo: (id: number) => void;
 }
 
-export function TodoList(props: TodoListProps) {
+export function TodoList({todos,onToggleTodo}: TodoListProps) {
   return (
     <ul>
-      {props.todos.map(todo => (
-        <TodoItem key={todo.id} todo={todo} onToggleTodo={props.onToggleTodo} />
+      {todos.map(todo => (
+        <TodoItem key={todo.id} todo={todo} onToggleTodo={onToggleTodo} />
       ))}
     </ul>
   );
